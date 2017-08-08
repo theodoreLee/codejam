@@ -1,0 +1,1 @@
+최대 턴 = Math.ceil(Kh.toDouble / Da) + Math.ceil(Kh.toDouble / Da) / (Dh / Ka + if(Dh % Ka) -1) - 1

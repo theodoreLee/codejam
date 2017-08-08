@@ -1,0 +1,67 @@
+Problem
+
+A certain bathroom has N + 2 stalls in a single row;
+어느 확실환 화장실은 N +2개의 한줄로된 stall들을 가지고 있습니다;
+the stalls on the left and right ends are permanently occupied by the bathroom guards.
+그 스툴들의 좌측과 우측끝에는 항상 화장실 가드가 사용하고 있습니다
+
+The other N stalls are for users.
+나머지 N개의 화장실 칸은 사용자들을 위한 겁니다
+
+Whenever someone enters the bathroom, they try to choose a stall that is as far from other people as possible.
+언제든 누군가 화장실을 들어왔을 때, 그들은 보통 화장실 칸을 선택하려고 시도합니다. 다른 사람들과 가능한한 가장 멀리 있는 곳을..
+
+To avoid confusion, they follow deterministic rules:
+혼동을 피하기 위해, 그들은 결정적인? 룰을 따릅니다
+
+For each empty stall S, they compute two values LS and RS,
+각각의 비어진 스툴 S에, 그들은 LS와 RS를 계산합니다.
+
+each of which is the number of empty stalls between S and the closest occupied stall to the left or right, respectively.
+각각은 입니다. / S와 (왼쪽 또는 오른쪽에서)가장 가까이에 사용중인 화장실 사이의 비어진 화장실 숫자입니다
+
+Then they consider the set of stalls with the farthest closest neighbor, that is, those S for which min(LS, RS) is maximal.
+그럼 그들은 가장 멀리 사용하고 있는 스틀의 집합을 고려할겁니다, 그것은, min(LS, RS)가 maximal한 S입니다
+
+If there is only one such stall, they choose it; otherwise, they choose the one among those where max(LS, RS) is maximal.
+만약 오직 하나의 그러한 스툴이 있다면, 그들은 그걸 선택할겁니다; 다른 경우, 그들은 그것들 중에 max(LS,RS)가 최대인 것을 고를겁니다.
+
+If there are still multiple tied stalls, they choose the leftmost stall among those.
+그리고 여전히 여러개의 스툴이 동률이라면, 그들은 그들중 제일 왼쪽의 스툴을 고를꺼에요.
+
+K people are about to enter the bathroom; each one will choose their stall before the next arrives. Nobody will ever leave.
+K명의 사람들이 화장실에 들어가려고 합니다; 각각은 아마 고를겁니다 그들의 스틀을 다른 사람이 오기 전에, 그리고 누구도 거길 떠나지 않을거에요.
+
+When the last person chooses their stall S, what will the values of max(LS, RS) and min(LS, RS) be?
+가장 마지막 사람이 S를 골랐을때, 가장 큰 max(LS,RS) 와 min(LS,R)는 뭐일까요?
+
+Solving this problem
+
+This problem has 2 Small datasets and 1 Large dataset.
+You must solve the first Small dataset before you can attempt the second Small dataset.
+You will be able to retry either of the Small datasets (with a time penalty).
+You will be able to make a single attempt at the Large, as usual, only after solving both Small datasets.
+
+Input
+
+The first line of the input gives the number of test cases, T. T lines follow.
+Each line describes a test case with two integers N and K, as described above.
+
+Output
+
+For each test case, output one line containing Case #x: y z, where x is the test case number (starting from 1), y is max(LS, RS), and z is min(LS, RS) as calculated by the last person to enter the bathroom for their chosen stall S.
+각가의 테스트 케이스는, Case #x: y z를 한줄을 출력합니다, x는 테스트 케이스 넘버 (1부터 시작하는), y는 max(LS,RS), z는 min(LS,RS) as(~ 할때의)
+
+Limits
+
+1 ≤ T ≤ 100.
+1 ≤ K ≤ N.
+Small dataset 1
+
+1 ≤ N ≤ 1000.
+Small dataset 2
+
+1 ≤ N ≤ 106.
+Large dataset
+
+1 ≤ N ≤ 1018.

@@ -1,0 +1,70 @@
+Problem
+
+Last year, the Infinite House of Pancakes introduced a new kind of pancake.
+작넌에, 펜케잌 무한의 집은 새로운 종류의 팬케익을 소개했습니다.
+
+It has a happy face made of chocolate chips on one side (the "happy side"), and nothing on the other side (the "blank side").
+그것은 한 면에 초콜릿 칩으로 만들어진 행복한 면(happy side), 아무것도 없는 다른면(the blank side)를 가지고 있습니다.
+
+You are the head cook on duty. The pancakes are cooked in a single row over a hot surface.
+당신은 치프 요리사로 일하고있습니다. 팬케익은 뜨거운 면에 조리되어 한줄로 있습니다
+
+As part of its infinite efforts to maximize efficiency, the House has recently given you an oversized pancake flipper that flips exactly K consecutive pancakes.
+효율성을 최고로 하기 위한 무한 노력의 일부로서, 가게는 최근 당신에게 oversized의 팬캐익 뒤집게를 주었습니다 그 뒤집게는 정확하게 (연달아오는) K개의 팬케익을 뒤집을 수 있습니다
+
+That is, in that range of K pancakes, it changes every happy-side pancake to a blank-side pancake, and vice versa; it does not change the left-to-right order of those pancakes.
+그 팬케익의 범위 안에서, 이것은 해피사이드를 블랭크 사이드 팬케익으로 바꿉니다 반대도 물론이구오; 이것은 이 팬케익들을 좌에서 우순으로는 바꾸지 않습니다
+
+You cannot flip fewer than K pancakes at a time with the flipper, even at the ends of the row (since there are raised borders on both sides of the cooking surface).
+당신은 뒤집게로 k 팬케익보다 작은 수를 한번에 뒤집을 수 없으며 심지어 줄의 마지막이라도
+
+For example, you can flip the first K pancakes, but not the first K - 1 pancakes.
+예를들어 당신은 첫번째 k개의 팬케익을 뒤집을수 있지만, k-1은 안됩니다.
+
+Your apprentice cook, who is still learning the job, just used the old-fashioned single-pancake flipper to flip some individual pancakes and then ran to the restroom with it, right before the time when customers come to visit the kitchen.
+당신의 도제 요리사, 요리를 계속 배우고 있는, 단지 사용해야해 구식의 하나만 뒤집을수 있는 뒤집게를/ 개별적인 팬케익을 뒤집기 위해 그리고 화장실에 가버렸어 그걸 들고, 손님들이 키친에 방문하기로 한 바로 전에
+
+You only have the oversized pancake flipper left, and you need to use it quickly to leave all the cooking pancakes happy side up, so that the customers leave feeling happy with their visit.
+
+
+Given the current state of the pancakes, calculate the minimum number of uses of the oversized pancake flipper needed to leave all pancakes happy side up, or state that there is no way to do it.
+
+Input
+
+The first line of the input gives the number of test cases, T. T test cases follow. Each consists of one line with a string S and an integer K. S represents the row of pancakes: each of its characters is either + (which represents a pancake that is initially happy side up) or - (which represents a pancake that is initially blank side up).
+
+Output
+
+For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is either IMPOSSIBLE if there is no way to get all the pancakes happy side up, or an integer representing the the minimum number of times you will need to use the oversized pancake flipper to do it.
+
+Limits
+
+1 ≤ T ≤ 100.
+Every character in S is either + or -.
+2 ≤ K ≤ length of S.
+Small dataset
+
+2 ≤ length of S ≤ 10.
+Large dataset
+
+2 ≤ length of S ≤ 1000.
+Sample
+
+
+Input
+
+Output
+
+3
+---+-++- 3
++++++ 4
+-+-+- 4
+
+Case #1: 3
+Case #2: 0
+Case #3: IMPOSSIBLE
+In Case #1, you can get all the pancakes happy side up by first flipping the leftmost 3 pancakes, getting to ++++-++-, then the rightmost 3, getting to ++++---+, and finally the 3 pancakes that remain blank side up. There are other ways to do it with 3 flips or more, but none with fewer than 3 flips.
+
+In Case #2, all of the pancakes are already happy side up, so there is no need to flip any of them.
+
+In Case #3, there is no way to make the second and third pancakes from the left have the same side up, because any flip flips them both. Therefore, there is no way to make all of the pancakes happy side up.
